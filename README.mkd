@@ -1,0 +1,34 @@
+Declarative Fields
+==================
+
+Working with backbone on some non trivial projects, I found that views
+should really encapsulate important bits behind functions, to isolate
+the rest of the view code from changes to selectors (i.e. a change to
+the html means a change to the view code in a single place).
+
+I really like the declarative syntax for view events, and wanted similar for
+what are essentially view fields.
+
+Examples
+--------
+
+```javascript
+Foo = Backbone.View.extend({
+  fields: {
+    header: '.header',
+    addButton: '.header button:first',
+  },
+
+  initialize: function() {
+    DeclarativeFields.init(this)
+  }
+})
+
+var view = Foo.new()
+
+view.fields.header() // returns view.$('.header')
+view.fields.addButton() // returns view.$('.header button:first')
+
+view.fields.add({new: 'span.new'})
+view.fields.new() // returns view.$('span.new')
+```

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Declarative Fields Specs</title>
+
+    <link rel="shortcut icon" type="image/png" href="./jasmine_favicon.png">
+
+    <link href="./jasmine.css" rel="stylesheet"/>
+    <script type="text/javascript" src="./jasmine.js"></script>
+    <script type="text/javascript" src="./jasmine-html.js"></script>
+
+    <script type="text/javascript" src="./jquery.js"></script>
+    <script type="text/javascript" src="./underscore.js"></script>
+    <script type="text/javascript" src="./backbone.js"></script>
+    <script type="text/javascript" src="./backbone.declarative-fields.js"></script>
+    <script type="text/javascript" src="./declarative-fields_spec.js"></script>
+
+    <script type="text/javascript">
+      (function() {
+        var jasmineEnv = jasmine.getEnv();
+        jasmineEnv.updateInterval = 1000;
+
+        var trivialReporter = new jasmine.TrivialReporter();
+
+        jasmineEnv.addReporter(trivialReporter);
+
+        jasmineEnv.specFilter = function(spec) {
+          return trivialReporter.specFilter(spec);
+        };
+
+        var currentWindowOnload = window.onload;
+
+        window.onload = function() {
+          if (currentWindowOnload) {
+            currentWindowOnload();
+          }
+          execJasmine();
+        };
+
+        function execJasmine() {
+          jasmineEnv.execute();
+        }
+
+      })();
+    </script>
+
+  </head>
+
+  <body>
+  </body>
+</html>
