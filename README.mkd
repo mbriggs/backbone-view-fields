@@ -1,5 +1,5 @@
-Declarative Fields
-==================
+View Fields
+===========
 
 Working with backbone on some non trivial projects, I found that views
 should really encapsulate important bits behind functions, to isolate
@@ -20,7 +20,7 @@ Foo = Backbone.View.extend({
   },
 
   initialize: function() {
-    DeclarativeFields.init(this)
+    ViewFields.init(this)
   }
 })
 
