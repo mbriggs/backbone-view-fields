@@ -4,7 +4,7 @@ describe("Declarative Fields", function() {
       fields: { foo: '.bar' },
 
       initialize: function() {
-        DeclarativeFields.init(this)
+        ViewFields.init(this)
       }
     })
 

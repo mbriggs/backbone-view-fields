@@ -1,6 +1,6 @@
 ;(function(global) {
-  global.DeclarativeFields = {}
-  global.DeclarativeFields.init = function(view) {
+  global.ViewFields = {}
+  global.ViewFields.init = function(view) {
     var initial = view.fields
 
     view.fields = {
