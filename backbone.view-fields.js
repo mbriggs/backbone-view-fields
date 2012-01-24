@@ -1,3 +1,5 @@
+/* global _ */
+
 ;(function(global) {
   global.ViewFields = {}
   global.ViewFields.init = function(view) {
@@ -17,4 +19,4 @@
 
     if (initial) view.fields.add(initial)
   }
-})(this)
+})(this);
